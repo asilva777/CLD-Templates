@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Causal Loop Diagram Templates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #004a99;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .diagram-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .diagram-card h2 {
+      margin-top: 0;
+      color: #0b5394;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .node {
+      fill: #0073e6;
+      stroke: #fff;
+      stroke-width: 2;
+    }
+
+    .label {
+      font-size: 14px;
+      fill: #000;
+      text-anchor: middle;
+    }
+
+    .arrow {
+      stroke: #0073e6;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+      fill: none;
+    }
+
+    .loop-type {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+
+    .tip {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Causal Loop Diagram Templates</h1>
+
+  <div class="container">
+
+    <!-- Reinforcing Loop -->
+    <div class="diagram-card">
+      <h2>Reinforcing Loop 🔁</h2>
+      <div class="loop-type">Positive Feedback</div>
+      <svg viewBox="0 0 300 300">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#0073e6"/>
+          </marker>
+        </defs>
+
+        <circle class="node" cx="150" cy="50" r="25" />
+        <text class="label" x="150" y="55">Investment</text>
+
+        <circle class="node" cx="250" cy="150" r="25" />
+        <text class="label" x="250" y="155">Growth</text>
+
+        <circle class="node" cx="150" cy="250" r="25" />
+        <text class="label" x="150" y="255">Revenue</text>
+
+        <circle class="node" cx="50" cy="150" r="25" />
+        <text class="label" x="50" y="155">Reinvestment</text>
+
+        <path class="arrow" d="M160 65 C220 90, 240 110, 245 125" />
+        <path class="arrow" d="M245 175 C240 200, 220 220, 160 235" />
+        <path class="arrow" d="M140 235 C80 220, 60 200, 55 175" />
+        <path class="arrow" d="M55 125 C60 100, 80 80, 140 65" />
+      </svg>
+      <p class="tip">A reinforcing loop amplifies change in the system over time — more causes more.</p>
+    </div>
+
+    <!-- Balancing Loop -->
+    <div class="diagram-card">
+      <h2>Balancing Loop 🔄</h2>
+      <div class="loop-type">Negative Feedback</div>
+      <svg viewBox="0 0 300 300">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#0073e6"/>
+          </marker>
+        </defs>
+
+        <circle class="node" cx="150" cy="50" r="25" />
+        <text class="label" x="150" y="55">Target</text>
+
+        <circle class="node" cx="250" cy="150" r="25" />
+        <text class="label" x="250" y="155">Action</text>
+
+        <circle class="node" cx="150" cy="250" r="25" />
+        <text class="label" x="150" y="255">Effect</text>
+
+        <circle class="node" cx="50" cy="150" r="25" />
+        <text class="label" x="50" y="155">Feedback</text>
+
+        <path class="arrow" d="M160 65 C220 90, 240 110, 245 125" />
+        <path class="arrow" d="M245 175 C240 200, 220 220, 160 235" />
+        <path class="arrow" d="M140 235 C80 220, 60 200, 55 175" />
+        <path class="arrow" d="M55 125 C60 100, 80 80, 140 65" />
+      </svg>
+      <p class="tip">A balancing loop seeks stability — it acts to counter change and maintain equilibrium.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
